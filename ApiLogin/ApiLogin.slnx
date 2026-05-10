@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="../ApiLogin.Application/ApiLogin.Application.csproj" />
+  <Project Path="../ApiLogin.Comunication/ApiLogin.Comunication.csproj" />
+  <Project Path="../ApiLogin.Domain/ApiLogin.Domain.csproj" />
+  <Project Path="../ApiLogin.Exception/ApiLogin.Exception.csproj" />
+  <Project Path="../ApiLogin.Infraestrutura/ApiLogin.Infraestrutura.csproj" />
+  <Project Path="ApiLogin.csproj" />
+</Solution>

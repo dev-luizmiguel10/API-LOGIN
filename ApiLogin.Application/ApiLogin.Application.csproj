@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.1.0" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApiLogin.Comunication\ApiLogin.Comunication.csproj" />
+    <ProjectReference Include="..\ApiLogin.Domain\ApiLogin.Domain.csproj" />
+    <ProjectReference Include="..\ApiLogin.Exception\ApiLogin.Exception.csproj" />
+  </ItemGroup>
+
+</Project>
