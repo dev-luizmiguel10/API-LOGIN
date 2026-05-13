@@ -4,5 +4,7 @@
   <Project Path="../ApiLogin.Domain/ApiLogin.Domain.csproj" />
   <Project Path="../ApiLogin.Exception/ApiLogin.Exception.csproj" />
   <Project Path="../ApiLogin.Infraestrutura/ApiLogin.Infraestrutura.csproj" />
+  <Project Path="../UseCases_Testes/UseCases_Testes.csproj" Id="f098ec2d-e176-446b-84ba-edc06b3e8202" />
+  <Project Path="../ValidarTestes_UseCase/ValidarTestes_UseCase.csproj" Id="9bc5451b-2b0f-48c9-88e4-a0369e8394a4" />
   <Project Path="ApiLogin.csproj" />
 </Solution>
