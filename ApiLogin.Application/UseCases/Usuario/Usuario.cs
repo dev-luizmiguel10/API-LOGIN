@@ -16,15 +16,13 @@ namespace ApiLogin.Application.UseCases.Usuario
     {
         private readonly IUSerRepository _user;
         private readonly IMapper _map;
-        private readonly EncriptarSenha _senha;
         private readonly IUnitiOfWork _unit;
         private readonly ITokenGerado _tkn;
         private readonly CryptSenha _password;
-        public Usuario(IUSerRepository uSerRepository, IMapper mapper, EncriptarSenha encriptar, IUnitiOfWork work, ITokenGerado token, CryptSenha password)
+        public Usuario(IUSerRepository uSerRepository, IMapper mapper, IUnitiOfWork work, ITokenGerado token, CryptSenha password)
         {
             _user = uSerRepository;
             _map = mapper;
-            _senha = encriptar;
             _unit = work;
             _tkn = token;
             _password = password;
