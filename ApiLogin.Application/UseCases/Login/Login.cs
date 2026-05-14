@@ -12,15 +12,12 @@ namespace ApiLogin.Application.UseCases.Login
     public class Login : ILogin
     {
         private readonly ILoginEntry _login;
-        private readonly EncriptarSenha _senha;
         private readonly ITokenGerado _token;
-        private readonly CryptSenha _password;
-        public Login(ILoginEntry login, EncriptarSenha senha, ITokenGerado token, CryptSenha password)
+        public Login(ILoginEntry login, ITokenGerado token)
         {
             _login = login;
-            _senha = senha;
             _token = token;
-            _password = password;
+           
         }
 
         public async Task<UsuarioResponse> FazerLogin(LoginRequest login)

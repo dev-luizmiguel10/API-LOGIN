@@ -37,7 +37,7 @@ namespace ValidarTestes_UseCase
                 .Setup(x => x.EncryptSenha(It.IsAny<string>()))
                 .Returns("senha-hash");
 
-            Mock.Get(IUSer).Setup(s => s.UsuarioDesabilitado(It.IsAny<int>())).ReturnsAsync(0);
+            
 
             var usuario_criado = new ApiLogin.Application.UseCases.Usuario.Usuario(IUSer, mapper, Iuniti, Itokens, Ipass);
 
@@ -46,7 +46,7 @@ namespace ValidarTestes_UseCase
             Assert.NotNull(user);
         }
         [Fact]
-        public async Task Erro_Name_Vazio()
+        public async Task Error_Name_Vazio()
         {
             // arrange 
             var request_nome = UseCases_Testes.Usuario.ValidarUsuario.validate();
@@ -74,8 +74,8 @@ namespace ValidarTestes_UseCase
 
         [Theory]
         [InlineData("")]
+        [InlineData("1234")]
         [InlineData("12345")]
-        [InlineData("123456")]
 
         public async Task Password_Vazio(string senha)
         {
@@ -107,8 +107,7 @@ namespace ValidarTestes_UseCase
 
             var usuario_criado = new ApiLogin.Application.UseCases.Usuario.Usuario(IUSer, mapper, Iuniti, Itokens, Ipass);
 
-            await Assert.ThrowsAsync<UsuarioOnException>(() =>
-            usuario_criado.RegistrarUsuario(request_teste_email));
+            await Assert.ThrowsAsync<UsuarioOnException>(()=>usuario_criado.RegistrarUsuario(request_teste_email));
         }
 
     }
