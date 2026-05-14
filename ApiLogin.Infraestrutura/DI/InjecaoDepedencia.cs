@@ -24,6 +24,7 @@ namespace ApiLogin.Infraestrutura.DI
             services.AddScoped<IUnitiOfWork, Unity>();
             services.AddScoped<ITokenGerado, TokenJwt>();
             services.AddScoped<ILoginEntry, Login>();
+            
         }
     }
 }

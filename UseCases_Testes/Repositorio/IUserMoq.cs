@@ -9,9 +9,9 @@ namespace UseCases_Testes.Repositorio
 {
     public class IUserMoq
     {
-        public static IUserRegistro Register()
+        public static IUSerRepository Register()
         {
-            var moq= new Mock<IUSerRepository>();
+            var moq = new Mock<IUSerRepository>();
             return moq.Object;
         }
     }

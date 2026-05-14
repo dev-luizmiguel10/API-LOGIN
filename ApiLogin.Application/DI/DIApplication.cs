@@ -1,6 +1,7 @@
 ﻿using ApiLogin.Application.Services;
 using ApiLogin.Application.UseCases.Login;
 using ApiLogin.Application.UseCases.Usuario;
+using ApiLogin.Domain.Repository;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -15,10 +16,7 @@ namespace ApiLogin.Application.DI
         public static void InjecaoDepedenciaApplication( this IServiceCollection services)
         {
             Usecase(services);
-            Password(services);
             Automapper(services);
-            Senha(services);
-
         }
         public static void Usecase(IServiceCollection services)
         {
@@ -26,11 +24,10 @@ namespace ApiLogin.Application.DI
             services.AddScoped<ILogin, Login>();
             services.AddScoped<IGetUsario, GetUsuario>();
             services.AddScoped<IUserDelete, UserDelete>();
+            services.AddScoped<IUserDelete, UserDelete>();
+            services.AddScoped<IPassword, CryptSenha>();
         }
-        public static void Password(IServiceCollection services)
-        {
-            services.AddScoped(s => new EncriptarSenha());
-        }
+      
         public static void Automapper(IServiceCollection services)
         {
             services.AddScoped(s => new AutoMapper.MapperConfiguration(u =>
@@ -38,9 +35,6 @@ namespace ApiLogin.Application.DI
                 u.AddProfile(new AutoMapping());
             }).CreateMapper());
         }
-        public static void Senha( IServiceCollection services)
-        {
-            services.AddScoped(s=>new CryptSenha());
-        }
+       
     }
 }

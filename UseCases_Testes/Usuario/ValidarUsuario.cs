@@ -14,7 +14,8 @@ namespace UseCases_Testes.Usuario
 
                 .RuleFor(r => r.nome, f => f.Person.FirstName)
                 .RuleFor(e => e.email, (f, user) => f.Internet.Email(user.nome))
-                .RuleFor(s => s.senha, f => f.Internet.Password());
+                .RuleFor(s => s.senha, f => f.Internet.Password())
+                .Generate();
                 
         }
     }

@@ -18,8 +18,8 @@ namespace ApiLogin.Application.UseCases.Usuario
         private readonly IMapper _map;
         private readonly IUnitiOfWork _unit;
         private readonly ITokenGerado _tkn;
-        private readonly CryptSenha _password;
-        public Usuario(IUSerRepository uSerRepository, IMapper mapper, IUnitiOfWork work, ITokenGerado token, CryptSenha password)
+        private readonly IPassword _password;
+        public Usuario(IUSerRepository uSerRepository, IMapper mapper, IUnitiOfWork work, ITokenGerado token, IPassword password)
         {
             _user = uSerRepository;
             _map = mapper;
@@ -30,9 +30,13 @@ namespace ApiLogin.Application.UseCases.Usuario
         public async Task<UsuarioResponse> RegistrarUsuario(UsuarioRequest user)
         {
             await ValidarUsuario(user);
+
             var usuario = _map.Map<ApiLogin.Domain.Entities.Usuario>(user);
-            usuario.senha = _password.EncrptSenha(user.senha);
+
+            usuario.senha = _password.EncryptSenha(user.senha);
+
             usuario.TokenUsuario = _tkn.GerarToken(Guid.NewGuid().ToString());
+
             await _user.Adicionar(usuario);
             await _unit.Salvar();
 

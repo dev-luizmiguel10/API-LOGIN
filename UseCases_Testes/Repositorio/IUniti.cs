@@ -9,7 +9,7 @@ namespace UseCases_Testes.Repositorio
 {
     public class IUniti
     {
-        public static IUnitiOfWork validate()
+        public static IUnitiOfWork Save()
         {
             var moq= new Mock<IUnitiOfWork>();
             return moq.Object;
