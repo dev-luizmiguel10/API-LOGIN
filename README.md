@@ -10,6 +10,7 @@ API REST desenvolvida com ASP.NET Core para autenticação de usuários utilizan
 - JWT Authentication
 - FluentValidation
 - xUnit + Moq + Bogus (testes unitários)
+-  WebApplicationFactory + EF InMemory (testes de integração)
 
 ## 🧠 Arquitetura
 Projeto estruturado em camadas:
@@ -33,3 +34,10 @@ Projeto conta com testes unitários cobrindo:
 - Email duplicado
 - Login com sucesso
 - Login com credenciais inválidas
+
+- 🔗 Testes de Integração
+- POST /api/Usuario com sucesso retorna 201
+- Email duplicado retorna 400
+- Campos vazios retorna 400
+- POST /api/Login com sucesso retorna 200
+- Login com credenciais inválidas retorna 401
