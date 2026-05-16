@@ -17,7 +17,8 @@ namespace ApiLogin.Infraestrutura.Repository
 
         public async Task<Domain.Entities.Usuario> LoginUsuario(string email, string password)
         {
-            var user = await _db.Usuarios.FirstAsync();
+            var user = await _db.Usuarios.FirstOrDefaultAsync(u =>
+    u.email == email && u.senha == password);
             return user;
         }
     }

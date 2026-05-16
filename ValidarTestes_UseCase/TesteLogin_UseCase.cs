@@ -44,7 +44,8 @@ namespace ValidarTestes_UseCase
             var teste_login = UseCases_Testes.Login.ValidarLogin.FazerLogin();
             var login = LoginMoq.Login();
             var token = IToken.Token();
-            Mock.Get(login).Setup(s => s.LoginUsuario(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync((Usuario)null);
+            Mock.Get(login).Setup(s => s.LoginUsuario(It.IsAny<string>(), It.IsAny<string>()))
+                .ReturnsAsync((Usuario)null);
           
             var login_user = new ApiLogin.Application.UseCases.Login.Login(login, token);
             await Assert.ThrowsAsync<LoginExcpetion>(() => login_user.FazerLogin(teste_login));

@@ -10,7 +10,7 @@ namespace ApiLogin.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    [Authorize]
+
     public class LoginController : ControllerBase
     {
         [HttpPost]
