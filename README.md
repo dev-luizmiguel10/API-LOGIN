@@ -35,7 +35,7 @@ Projeto conta com testes unitários cobrindo:
 - Login com sucesso
 - Login com credenciais inválidas
 
-- 🔗 Testes de Integração
+- ## 🔗 Testes de Integração
 - POST /api/Usuario com sucesso retorna 201
 - Email duplicado retorna 400
 - Campos vazios retorna 400
