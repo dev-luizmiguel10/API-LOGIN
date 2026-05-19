@@ -19,10 +19,10 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restore dependencies
-      run: dotnet restore ApiLogin.sln
+      run: dotnet restore ApiLogin/ApiLogin.sln
 
     - name: Build
-      run: dotnet build ApiLogin.sln --no-restore
+      run: dotnet build ApiLogin/ApiLogin.sln --no-restore
 
     - name: Unit Tests
       run: dotnet test UseCases_Testes --no-build --verbosity normal
